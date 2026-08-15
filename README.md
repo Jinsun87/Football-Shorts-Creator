@@ -45,8 +45,10 @@ Output:
 
 ## Automations
 
+Shareable, in-depth Cursor Automation prompt (copy-paste + webhook payload): [`.cursor/automations/football-news-shorts.md`](.cursor/automations/football-news-shorts.md)
+
 - **GitHub Actions:** Actions → *Create football short* → run with a news URL. Store `OPENAI_API_KEY` and `SERPER_API_KEY` as repository secrets. You can also POST `repository_dispatch` type `create-football-short` with `{ "url": "..." }`.
-- **Cursor Automations:** copy `.cursor/automations/football-news-shorts.md` into a webhook-triggered automation pointed at this repo.
+- **Cursor Automations:** new automation → this repo → webhook trigger → paste the prompt from that file.
 
 ## Stack
 

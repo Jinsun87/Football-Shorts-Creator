@@ -1,0 +1,47 @@
+name: Create football short
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: Football news article URL
+        required: true
+        type: string
+      skip_render:
+        description: Prepare assets only (skip Remotion render)
+        required: false
+        type: boolean
+        default: false
+  repository_dispatch:
+    types: [create-football-short]
+
+jobs:
+  create-short:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Generate short
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
+          NEWS_URL: ${{ github.event.inputs.url || github.event.client_payload.url }}
+        run: |
+          extra=""
+          if [ "${{ github.event.inputs.skip_render }}" = "true" ]; then
+            extra="--skip-render"
+          fi
+          npm run create-short -- --url "$NEWS_URL" $extra
+      - uses: actions/upload-artifact@v4
+        with:
+          name: football-short
+          path: |
+            out/*.mp4
+            public/shorts/**/props.json
+            public/shorts/**/script.txt
+          if-no-files-found: warn

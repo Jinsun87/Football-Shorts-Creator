@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <rect width="1080" height="1920" fill="#102018"/>
+  <g fill="#d4af37" opacity="0.35">
+    <circle cx="180" cy="420" r="18"/>
+    <circle cx="320" cy="510" r="12"/>
+    <circle cx="860" cy="390" r="16"/>
+    <circle cx="700" cy="620" r="10"/>
+    <circle cx="240" cy="1280" r="14"/>
+    <circle cx="900" cy="1400" r="18"/>
+    <circle cx="540" cy="1500" r="11"/>
+  </g>
+  <rect x="80" y="760" width="920" height="280" rx="40" fill="#0b3d1e"/>
+  <text x="540" y="930" text-anchor="middle" fill="#f4e6b2" font-size="72" font-family="Arial, sans-serif">FULL TIME</text>
+</svg>

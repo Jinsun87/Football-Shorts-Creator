@@ -43,12 +43,15 @@ Output:
 - `public/shorts/<id>/` — narration, stills, `props.json`, `script.txt`
 - `out/<id>.mp4` — final vertical video
 
-## Automations
+## Claude Code (local, no GitHub)
 
-Shareable, in-depth Cursor Automation prompt (copy-paste + webhook payload): [`.cursor/automations/football-news-shorts.md`](.cursor/automations/football-news-shorts.md)
+Open Claude Code in this folder. Put keys in `.env`. Then either:
 
-- **GitHub Actions:** Actions → *Create football short* → run with a news URL. Store `OPENAI_API_KEY` and `SERPER_API_KEY` as repository secrets. You can also POST `repository_dispatch` type `create-football-short` with `{ "url": "..." }`.
-- **Cursor Automations:** new automation → this repo → webhook trigger → paste the prompt from that file.
+- `/create-short https://www.example.com/football/late-winner`
+- paste a news URL
+- paste the prompt in [`prompts/claude-code-local.md`](prompts/claude-code-local.md)
+
+How to share that prompt: [`.cursor/automations/football-news-shorts.md`](.cursor/automations/football-news-shorts.md)
 
 ## Stack
 

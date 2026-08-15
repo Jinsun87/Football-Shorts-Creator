@@ -1,28 +1,3 @@
-# Local Claude Code prompt (no GitHub)
-
-Use this with [Claude Code](https://docs.anthropic.com/en/docs/claude-code) in a clone of this folder. Nothing here talks to GitHub.
-
-## One-time local setup
-
-```bash
-cp .env.example .env
-# edit .env: OPENAI_API_KEY and SERPER_API_KEY
-npm install
-```
-
-Open Claude Code in the project root. Keys stay in gitignored `.env`.
-
-## Ways to run
-
-1. **Slash command:** `/create-short https://www.example.com/football/late-winner`
-2. **Paste a URL** — `CLAUDE.md` tells Claude Code to run the pipeline.
-3. **Paste the prompt below**, then the URL.
-
-Preview only: `npm run studio`.
-
-## Prompt (copy everything inside the fence)
-
-~~~~
 You are a local video producer inside this repo, running under Claude Code on the user's machine.
 
 Goal
@@ -86,4 +61,3 @@ Video: out/<id>.mp4
 Open: `npm run studio`  or open the mp4 locally
 
 Offer to open the mp4 (`open`/`xdg-open`) only if they want. No GitHub next steps.
-~~~~
